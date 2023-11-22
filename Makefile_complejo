@@ -1,0 +1,12 @@
+OBJS = menu.o sumar.o programa.o
+CFLAGS = -g -Wall
+BYNARY = ejecutable
+
+# Inicio del makefile
+ejecutable: $(OBJS)
+	gcc -o $(BYNARY) $(OBJS)
+
+%.o: %.c
+	gcc $(CFLAGS) -c $< -o $@
+clean:
+	rm -f *.o
